@@ -1,5 +1,10 @@
 name: Refresh WooRadar observation feed
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/collect.py'
+      - '.github/workflows/refresh.yml'
   workflow_dispatch:
   schedule:
     - cron: '23 */6 * * *'
