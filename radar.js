@@ -45,6 +45,7 @@
    const pinned=list.filter(hasCoords);
    layer.clearLayers();
    const fragment=document.createDocumentFragment(),radius=map.getZoom()<=3?3.5:map.getZoom()<=5?5:7;
+   let shown=0;
    for(const e of list){
      let marker=null;
      if(hasCoords(e)){
@@ -55,6 +56,8 @@
        link.href=e.url;link.textContent='Examine source ↗';link.target='_blank';link.rel='noopener noreferrer';
        popup.append(title,date,link);marker.bindPopup(popup);
      }
+     if(shown>=140)continue;
+     shown++;
      const card=document.createElement('article');card.className='entry';
      const tag=document.createElement('span');tag.className='pill';tag.textContent=(e.kind==='research'?'RESEARCH':e.kind==='document'?'DOCUMENT':e.kind==='spaceweather'?'SPACE WEATHER':e.kind==='report'?'WITNESS REPORT':e.kind.toUpperCase())+' · '+(names[e.feed]||e.source||'SOURCE');
      const h=document.createElement('h3'),link=document.createElement('a');link.href=e.url;link.rel='noopener noreferrer';link.target='_blank';link.textContent=e.title;h.append(link);
@@ -64,7 +67,7 @@
      fragment.append(card);
    }
    const feed=$('feed');feed.replaceChildren();feed.classList.remove('empty');
-   if(list.length)feed.append(fragment);else{feed.classList.add('empty');feed.textContent=loadOK?'No source records match these filters. Try all dates or another category.':'Source data unavailable.';}
+   if(list.length){feed.append(fragment);if(list.length>shown){const more=document.createElement('div');more.className='empty';more.textContent='Showing newest '+shown+' of '+list.length+' filtered records. Narrow the date, source or search to inspect older records.';feed.append(more);}}else{feed.classList.add('empty');feed.textContent=loadOK?'No source records match these filters. Try all dates or another category.':'Source data unavailable.';}
    $('count').textContent=String(pinned.length);$('mapcount').textContent=pinned.length+' MAP PINS · '+list.length+' FEED RECORDS';
    const mostRecent=list.find(e=>eventDate(e));$('latest').textContent=mostRecent?formatted(mostRecent.date):'—';
    const all=entries.filter(e=>selectedSource==='all'||e.feed===selectedSource).filter(e=>kind==='all'||e.kind===kind);
