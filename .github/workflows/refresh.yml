@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'tools/collect.py'
+      - 'tools/collect_extra.py'
       - '.github/workflows/refresh.yml'
   workflow_dispatch:
   schedule:
@@ -25,11 +26,13 @@ jobs:
           python-version: '3.12'
       - name: Fetch NASA/JPL observations
         run: python tools/collect.py
+      - name: Fetch supplementary research and environmental sources
+        run: python tools/collect_extra.py
       - name: Save valid observations
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/observations.json
+          git add data/observations.json data/extras.json
           if ! git diff --cached --quiet; then
             git commit -m "Refresh verified observation feed"
             git push
