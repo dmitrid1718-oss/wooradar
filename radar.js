@@ -4,69 +4,105 @@
  const map=L.map('map',{worldCopyJump:true,zoomControl:true,preferCanvas:true}).setView([17,7],2);
  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',maxZoom:18}).addTo(map);
  const layer=L.layerGroup().addTo(map);
- let events=[],kind='all',days='all',search='',updatedAt=null,loadOK=false;
- const fmt=d=>{const date=new Date(d);return Number.isNaN(date.getTime())?'—':date.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});};
- const age=d=>{const t=Date.parse(d);if(!Number.isFinite(t))return '—';const n=Math.max(0,Date.now()-t);const h=Math.floor(n/3600000);return h<48?(h<1?'< 1h':h+'h'):Math.floor(n/86400000)+'d';};
- const valid=e=>e&&Number.isFinite(e.lat)&&Number.isFinite(e.lon)&&Math.abs(e.lat)<=90&&Math.abs(e.lon)<=180&&typeof e.date==='string'&&Number.isFinite(Date.parse(e.date))&&typeof e.url==='string'&&/^https:\/\//.test(e.url);
- const getBase=()=>events.filter(e=>(kind==='all'||e.kind===kind)&& (days==='all'||Date.parse(e.date)>=Date.now()-Number(days)*86400000));
- function renderTimeline(){
-  const box=$('timeline');box.replaceChildren();
-  const today=new Date(), start=new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth()-11,1)), bins=[];
-  for(let i=0;i<12;i++){const d=new Date(Date.UTC(start.getUTCFullYear(),start.getUTCMonth()+i,1));bins.push({key:d.toISOString().slice(0,7),label:d.toLocaleDateString(undefined,{month:'short',timeZone:'UTC'}),count:0});}
-  for(const e of events){const k=e.date.slice(0,7),b=bins.find(x=>x.key===k);if(b)b.count++;}
-  const max=Math.max(1,...bins.map(b=>b.count));
-  for(const b of bins){
-   const el=document.createElement('div');el.className='timeline-col';el.title=b.key+': '+b.count+' recorded event(s)';
-   const bar=document.createElement('div');bar.className='bar';bar.style.height=(b.count?Math.max(3,Math.round(b.count/max*100)):2)+'%';
-   const label=document.createElement('span');label.textContent=b.label;el.append(bar,label);box.append(el);
-  }
+ const colors={fireball:'#ffb16e',uap:'#80cdf8',report:'#d69bfa',other:'#9bb0bb'};
+ const names={jpl:'NASA/JPL Fireballs',geipan:'GEIPAN / CNES',nuforc:'NUFORC / UAP Atlas',noaa:'NOAA SWPC Kp',donki:'NASA DONKI',official_uap:'UAP Records Archive',arxiv:'arXiv research'};
+ let entries=[],selectedSource='all',kind='all',days='all',search='',sources={},loadOK=false,updatedAt=null;
+ const formatted=d=>{let t=Date.parse(d);return Number.isFinite(t)?new Date(t).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}):'Date not specified';};
+ const age=d=>{const t=Date.parse(d),n=Date.now()-t;if(!Number.isFinite(n))return '—';if(n<3600000)return '< 1h';if(n<48*3600000)return Math.floor(n/3600000)+'h';return Math.floor(n/86400000)+'d';};
+ const hasCoords=e=>Number.isFinite(e.lat)&&Number.isFinite(e.lon)&&Math.abs(e.lat)<=90&&Math.abs(e.lon)<=180;
+ const valid=e=>e&&typeof e.title==='string'&&typeof e.url==='string'&&/^https:\/\//.test(e.url)&&typeof e.kind==='string';
+ const eventDate=e=>Number.isFinite(Date.parse(e.date))?Date.parse(e.date):null;
+ const visible=()=>entries.filter(e=>{
+   if(selectedSource!=='all'&&e.feed!==selectedSource)return false;
+   if(kind!=='all'&&e.kind!==kind)return false;
+   if(days!=='all'&&(!eventDate(e)||eventDate(e)<Date.now()-Number(days)*86400000))return false;
+   const q=search.trim().toLowerCase();
+   return !q||[e.title,e.date,e.detail,e.status,e.source,String(e.lat??''),String(e.lon??''),e.period].join(' ').toLowerCase().includes(q);
+ });
+ function timeline(){
+   const box=$('timeline');box.replaceChildren();
+   const now=new Date(),bins=[];
+   for(let i=11;i>=0;i--){const d=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth()-i,1));bins.push({key:d.toISOString().slice(0,7),label:d.toLocaleDateString('en-US',{month:'short',timeZone:'UTC'}),count:0});}
+   const active=entries.filter(e=>selectedSource==='all'||e.feed===selectedSource).filter(e=>kind==='all'||e.kind===kind);
+   for(const e of active){const bin=bins.find(b=>b.key===String(e.date||'').slice(0,7));if(bin)bin.count++;}
+   const peak=Math.max(1,...bins.map(b=>b.count));
+   bins.forEach(b=>{const el=document.createElement('div'),bar=document.createElement('div'),span=document.createElement('span');
+     el.className='timeline-col';bar.className='bar';bar.style.height=Math.max(2,Math.round(b.count/peak*90))+'%';span.textContent=b.label;el.title=b.key+': '+b.count+' reports';el.append(bar,span);box.append(el);});
+ }
+ function health(){
+   const container=$('source-status-list');container.replaceChildren();
+   for(const key of ['jpl','geipan','nuforc','noaa','donki','official_uap','arxiv']){
+     const d=sources[key]||{state:'unavailable',items:[]};
+     const item=document.createElement('div'),name=document.createElement('strong'),status=document.createElement('span'),detail=document.createElement('span');
+     item.className='source-item';name.textContent=names[key];status.className=d.state==='ok'?'ok':d.state==='stale'?'stale':'unavailable';
+     status.textContent=(d.state==='ok'?'ACTIVE':d.state==='stale'?'STALE':'UNAVAILABLE')+' · '+(d.items||[]).length+' records';
+     detail.textContent=d.updated_utc?'Updated '+age(d.updated_utc)+' ago':'No successful snapshot';
+     item.append(name,status,document.createElement('br'),detail);container.append(item);
+   }
  }
  function render(){
-  const query=search.trim().toLowerCase();
-  const list=getBase().filter(e=>!query||[e.title,e.date,e.detail,String(e.lat),String(e.lon),e.status].join(' ').toLowerCase().includes(query));
-  layer.clearLayers();
-  const frag=document.createDocumentFragment(),bounds=[];
-  const radius=map.getZoom()<=3?3.5:map.getZoom()<=5?5:7;
-  for(const e of list){
-   const marker=L.circleMarker([e.lat,e.lon],{radius,color:'#ffb16e',weight:1.5,fillColor:'#ffb16e',fillOpacity:.65}).addTo(layer);
-   bounds.push([e.lat,e.lon]);
-   const popup=document.createElement('div'),title=document.createElement('b'),date=document.createElement('p'),link=document.createElement('a');
-   title.textContent=e.title;date.textContent=fmt(e.date)+' · '+(e.status||'Observed');link.textContent='Original source ↗';link.href=e.url;link.target='_blank';link.rel='noopener noreferrer';popup.append(title,date,link);marker.bindPopup(popup);
-   const entry=document.createElement('article');entry.className='entry';
-   const tag=document.createElement('span');tag.className='pill';tag.textContent=e.kind.toUpperCase()+' · '+(e.status||'OBSERVED');
-   const h=document.createElement('h3'),a=document.createElement('a');a.href=e.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=e.title;h.append(a);
-   const note=document.createElement('p');note.textContent=fmt(e.date)+' · '+e.lat.toFixed(2)+'°, '+e.lon.toFixed(2)+'°'+(e.detail?' · '+e.detail:'');
-   const zoom=document.createElement('button');zoom.type='button';zoom.textContent='Show on map';
-   zoom.addEventListener('click',()=>{map.setView([e.lat,e.lon],Math.max(map.getZoom(),6));marker.openPopup();document.getElementById('map').scrollIntoView({behavior:'smooth',block:'center'});});
-   entry.append(tag,h,note,zoom);frag.append(entry);
-  }
-  const feed=$('feed');feed.classList.remove('empty');feed.replaceChildren();
-  if(list.length)feed.append(frag);else{feed.textContent=loadOK?'No sourced observations match these filters.':'Source feed unavailable. Last verified records cannot be loaded.';feed.classList.add('empty');}
-  $('count').textContent=String(list.length);$('mapcount').textContent=list.length+' LOCATED EVENTS';
-  $('latest').textContent=list.length?fmt(list[0].date):'—';
-  $('dashboard-description').textContent=events.length?events.length+' coordinate-backed observation(s) in the downloaded dataset; '+list.length+' match the current view. Filtered views are not global incident counts.':'No records currently available. See source status above.';
+   const list=visible().sort((a,b)=>(eventDate(b)||0)-(eventDate(a)||0));
+   const pinned=list.filter(hasCoords);
+   layer.clearLayers();
+   const fragment=document.createDocumentFragment(),radius=map.getZoom()<=3?3.5:map.getZoom()<=5?5:7;
+   for(const e of list){
+     let marker=null;
+     if(hasCoords(e)){
+       const color=colors[e.kind]||colors.other;
+       marker=L.circleMarker([e.lat,e.lon],{radius,color,weight:1.6,fillColor:color,fillOpacity:.65}).addTo(layer);
+       const popup=document.createElement('div'),title=document.createElement('b'),date=document.createElement('p'),link=document.createElement('a');
+       title.textContent=e.title;date.textContent=formatted(e.date)+' · '+(e.source||names[e.feed]||'Source');
+       link.href=e.url;link.textContent='Examine source ↗';link.target='_blank';link.rel='noopener noreferrer';
+       popup.append(title,date,link);marker.bindPopup(popup);
+     }
+     const card=document.createElement('article');card.className='entry';
+     const tag=document.createElement('span');tag.className='pill';tag.textContent=(e.kind==='research'?'RESEARCH':e.kind==='document'?'DOCUMENT':e.kind==='spaceweather'?'SPACE WEATHER':e.kind==='report'?'WITNESS REPORT':e.kind.toUpperCase())+' · '+(names[e.feed]||e.source||'SOURCE');
+     const h=document.createElement('h3'),link=document.createElement('a');link.href=e.url;link.rel='noopener noreferrer';link.target='_blank';link.textContent=e.title;h.append(link);
+     const p=document.createElement('p');p.textContent=formatted(e.date)+(e.detail?' · '+e.detail:'')+(hasCoords(e)?' · '+e.lat.toFixed(2)+'°, '+e.lon.toFixed(2)+'°':' · Not mapped');
+     card.append(tag,h,p);
+     if(marker){const zoom=document.createElement('button');zoom.textContent='Show on map';zoom.type='button';zoom.addEventListener('click',()=>{map.setView([e.lat,e.lon],Math.max(map.getZoom(),6));marker.openPopup();$('map').scrollIntoView({behavior:'smooth',block:'center'});});card.append(zoom);}
+     fragment.append(card);
+   }
+   const feed=$('feed');feed.replaceChildren();feed.classList.remove('empty');
+   if(list.length)feed.append(fragment);else{feed.classList.add('empty');feed.textContent=loadOK?'No source records match these filters. Try all dates or another category.':'Source data unavailable.';}
+   $('count').textContent=String(pinned.length);$('mapcount').textContent=pinned.length+' MAP PINS · '+list.length+' FEED RECORDS';
+   const mostRecent=list.find(e=>eventDate(e));$('latest').textContent=mostRecent?formatted(mostRecent.date):'—';
+   const all=entries.filter(e=>selectedSource==='all'||e.feed===selectedSource).filter(e=>kind==='all'||e.kind===kind);
+   const thirty=all.filter(e=>eventDate(e)&&eventDate(e)>=Date.now()-30*86400000).length;
+   const year=all.filter(e=>eventDate(e)&&eventDate(e)>=Date.now()-365*86400000).length;
+   $('count30').textContent=thirty;$('count365').textContent=year;
+   $('event-age').textContent=mostRecent?age(mostRecent.date):'—';
+   $('dashboard-description').textContent=pinned.length+' geolocated pins and '+list.length+' feed entries match the filters. Unmapped research, documents and space-weather conditions appear in the feed only. Counts reflect available reports, not the true incidence of unexplained events.';
+   timeline();
  }
- function dashboard(){
-  const now=Date.now();$('count30').textContent=events.filter(e=>Date.parse(e.date)>=now-30*86400000).length;
-  $('count365').textContent=events.filter(e=>Date.parse(e.date)>=now-365*86400000).length;
-  $('event-age').textContent=events.length?age(events[0].date):'—';
-  $('source-age').textContent=updatedAt?age(updatedAt):'—';
-  const ageMS=updatedAt?now-Date.parse(updatedAt):NaN;
-  $('data-health').textContent=!loadOK?'FEED UNAVAILABLE':!events.length?'NO SOURCE RECORDS':!Number.isFinite(ageMS)?'NO TIMESTAMP':ageMS>48*3600000?'STALE DATA':'SOURCE CURRENT';
-  renderTimeline();
- }
+ async function fetchJSON(url){const r=await fetch(url+'?refresh='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return r.json();}
  async function load(){
-  $('status').textContent='CHECKING SOURCE DATA…';
-  try{
-   const r=await fetch('./data/observations.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);
-   const data=await r.json();if(!Array.isArray(data.events))throw Error('Invalid data');
-   events=data.events.filter(valid).sort((a,b)=>b.date.localeCompare(a.date));updatedAt=data.updated_utc||null;loadOK=true;
-   $('updated').textContent=updatedAt?fmt(updatedAt):'—';
-   const t=Date.parse(updatedAt);$('status').textContent=!events.length?'NO PUBLISHED OBSERVATIONS':!Number.isFinite(t)||Date.now()-t>48*3600000?'SOURCE SNAPSHOT STALE':'SOURCE SNAPSHOT AVAILABLE';
-  }catch(e){loadOK=false;events=[];updatedAt=null;$('status').textContent='SOURCE UNAVAILABLE';$('updated').textContent='—';console.warn('WooRadar feed:',e);}
-  dashboard();render();setTimeout(()=>map.invalidateSize(),0);
+   $('status').textContent='CHECKING SOURCES…';
+   const [baseResult,extraResult]=await Promise.allSettled([fetchJSON('./data/observations.json'),fetchJSON('./data/extras.json')]);
+   entries=[];sources={};updatedAt=null;loadOK=false;
+   if(baseResult.status==='fulfilled'&&Array.isArray(baseResult.value.events)){
+     const d=baseResult.value;const items=d.events.filter(valid).map(e=>({...e,feed:'jpl'}));
+     sources.jpl={items,state:items.length?'ok':'unavailable',updated_utc:d.updated_utc};
+     entries.push(...items);updatedAt=d.updated_utc;loadOK=true;
+   }else sources.jpl={state:'unavailable',items:[]};
+   if(extraResult.status==='fulfilled'&&extraResult.value.sources&&typeof extraResult.value.sources==='object'){
+     Object.entries(extraResult.value.sources).forEach(([key,value])=>{
+       const items=Array.isArray(value.items)?value.items.filter(valid).map(e=>({...e,feed:key})):[];
+       sources[key]={state:value.state==='ok'?'ok':items.length?'stale':'unavailable',updated_utc:value.updated_utc,items};
+       entries.push(...items);
+     });
+     loadOK=true;
+   }
+   const snapshots=Object.values(sources).map(x=>Date.parse(x.updated_utc)).filter(Number.isFinite);
+   const recent=snapshots.length?Math.max(...snapshots):NaN;
+   $('source-age').textContent=Number.isFinite(recent)?age(new Date(recent).toISOString()):'—';
+   $('updated').textContent=Number.isFinite(recent)?formatted(new Date(recent).toISOString()):'—';
+   $('data-health').textContent=!loadOK?'FEEDS UNAVAILABLE':!Number.isFinite(recent)?'NO SUCCESSFUL REFRESH':Date.now()-recent>48*3600000?'SOME DATA MAY BE STALE':'SOURCE SNAPSHOTS LOADED';
+   $('status').textContent=!loadOK?'SOURCES UNAVAILABLE':entries.length?'SOURCE RECORDS LOADED':'AWAITING SOURCE DATA';
+   entries.sort((a,b)=>(eventDate(b)||0)-(eventDate(a)||0));health();render();setTimeout(()=>map.invalidateSize(),0);
  }
  document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{kind=b.dataset.kind;document.querySelectorAll('[data-kind]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
+ document.querySelectorAll('[data-source]').forEach(b=>b.addEventListener('click',()=>{selectedSource=b.dataset.source;document.querySelectorAll('[data-source]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
  document.querySelectorAll('[data-days]').forEach(b=>b.addEventListener('click',()=>{days=b.dataset.days;document.querySelectorAll('[data-days]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
  $('feed-search').addEventListener('input',e=>{search=e.target.value;render();});
  $('reset-map').addEventListener('click',()=>map.setView([17,7],2));
