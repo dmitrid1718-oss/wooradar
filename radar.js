@@ -5,7 +5,7 @@
  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',maxZoom:18}).addTo(map);
  const layer=L.layerGroup().addTo(map);
  const colors={fireball:'#ffb16e',uap:'#80cdf8',report:'#d69bfa',other:'#9bb0bb'};
- const names={jpl:'NASA/JPL Fireballs',geipan:'GEIPAN / CNES',nuforc:'NUFORC / UAP Atlas',noaa:'NOAA SWPC Kp',donki:'NASA DONKI',official_uap:'UAP Records Archive',arxiv:'arXiv research'};
+ const names={jpl:'NASA/JPL Fireballs',geipan:'GEIPAN / CNES',nuforc:'NUFORC / UAP Atlas',noaa:'NOAA SWPC Kp',donki:'NASA DONKI',official_uap:'UAP Records Archive',arxiv:'arXiv research',crossref:'Crossref research'};
  let entries=[],selectedSource='all',kind='all',days='all',search='',sources={},loadOK=false,updatedAt=null;
  const formatted=d=>{let t=Date.parse(d);return Number.isFinite(t)?new Date(t).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}):'Date not specified';};
  const age=d=>{const t=Date.parse(d),n=Date.now()-t;if(!Number.isFinite(n))return '—';if(n<3600000)return '< 1h';if(n<48*3600000)return Math.floor(n/3600000)+'h';return Math.floor(n/86400000)+'d';};
@@ -31,7 +31,7 @@
  }
  function health(){
    const container=$('source-status-list');container.replaceChildren();
-   for(const key of ['jpl','geipan','nuforc','noaa','donki','official_uap','arxiv']){
+   for(const key of ['jpl','geipan','nuforc','noaa','donki','official_uap','arxiv','crossref']){
      const d=sources[key]||{state:'unavailable',items:[]};
      const item=document.createElement('div'),name=document.createElement('strong'),status=document.createElement('span'),detail=document.createElement('span');
      item.className='source-item';name.textContent=names[key];status.className=d.state==='ok'?'ok':d.state==='stale'?'stale':'unavailable';
