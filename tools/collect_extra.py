@@ -51,6 +51,49 @@ def geipan():
         r=record("geipan-"+str(p.get("id") or i),title,date,"GEIPAN / CNES via UAP Atlas",link,"uap",coords[1],coords[0],"GEIPAN classification: "+classification,"documented case, not verified extraordinary")
         if r:rows.append(r)
     return sorted(rows,key=lambda r:r["date"],reverse=True)[:1000]
+def nuforc():
+    # UAP Atlas explicitly exports factual NUFORC fields with attribution.
+    # Never copy NUFORC witness narratives; link to sourceUrl.
+    url="https://theuapatlas.com/api/export?"+urllib.parse.urlencode({"format":"json","from":"2024","to":str(NOW.year),"limit":5000})
+    data=get_json(url)
+    if isinstance(data,list):records=data
+    elif isinstance(data,dict):records=next((v for k,v in data.items() if k in ("records","reports","data","items") and isinstance(v,list)),[])
+    else:records=[]
+    rows=[]
+    for i,p in enumerate(records):
+        if not isinstance(p,dict):continue
+        date=stamp(p.get("datetime"))
+        link=p.get("sourceUrl")
+        if not date or not isinstance(link,str) or not link.startswith("https://"):continue
+        shape=str(p.get("shape") or "Unspecified").strip()[:80]
+        title="Civilian sighting report · "+shape
+        details="City-level report coordinates; witness claim, not a verified unidentified object."
+        r=record("nuforc-"+str(p.get("id") or i),title,date,"NUFORC via The UAP Atlas",link,"report",p.get("lat"),p.get("lng"),details,"unverified witness report")
+        if r and "lat" in r:rows.append(r)
+    rows.sort(key=lambda x:x["date"],reverse=True)
+    return rows[:2500]
+
+def crossref():
+    # Independent metadata source; no proxy scores or arbitrary map coordinates.
+    rows=[]
+    topics=("consciousness neuroscience","emergent artificial intelligence","unusual quantum phenomena")
+    for topic in topics:
+        url="https://api.crossref.org/works?"+urllib.parse.urlencode({"query":topic,"rows":15,"sort":"published","order":"desc","filter":"from-pub-date:2026-01-01"})
+        response=get_json(url)
+        for p in response.get("message",{}).get("items",[]):
+            doi=p.get("DOI")
+            if not doi:continue
+            parts=(p.get("published") or p.get("created") or {}).get("date-parts",[])
+            if not parts:continue
+            ymd=parts[0]+[1,1]
+            try:date=stamp("%04d-%02d-%02d"%tuple(ymd[:3]))
+            except (TypeError,ValueError):continue
+            title=" ".join(p.get("title",[])[:1])
+            if not title:continue
+            r=record("crossref-"+doi,title,date,"Crossref scholarly metadata","https://doi.org/"+doi,"research",detail="Published scholarly metadata; relevance based on search terms, not verified anomaly",status="research publication")
+            if r:r["topic"]=topic;rows.append(r)
+    return list({r["id"]:r for r in rows}.values())
+
 def noaa():
     raw=get_json("https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json")
     rows=[]
@@ -110,7 +153,7 @@ def main():
     if OUT.exists():
         try:prior=json.loads(OUT.read_text(encoding="utf-8")).get("sources",{})
         except (ValueError,OSError):pass
-    jobs={"geipan":geipan,"noaa":noaa,"donki":donki,"official_uap":official_uap,"arxiv":arxiv}
+    jobs={"geipan":geipan,"nuforc":nuforc,"noaa":noaa,"donki":donki,"official_uap":official_uap,"arxiv":arxiv,"crossref":crossref}
     sources={}
     for name,run in jobs.items():
         prev=prior.get(name,{})
