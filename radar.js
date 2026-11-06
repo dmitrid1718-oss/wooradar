@@ -4,6 +4,21 @@
  const map=L.map('map',{worldCopyJump:true,zoomControl:true,preferCanvas:true}).setView([17,7],2);
  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',maxZoom:18}).addTo(map);
  const layer=L.layerGroup().addTo(map);
+ // Persist a local, high-contrast black basemap without changing the tile provider.
+ // Set black as the initial mode for first-time visitors.
+ const themeButton=$('map-theme');
+ let blackMap=true;
+ try{const saved=localStorage.getItem('wooradar-map-theme');if(saved==='normal')blackMap=false;}catch(_){}
+ function setMapTheme(isBlack){
+   blackMap=!!isBlack;
+   document.body.classList.toggle('black-map',blackMap);
+   themeButton.setAttribute('aria-pressed',String(blackMap));
+   themeButton.textContent=blackMap?'Black map: ON':'Black map: OFF';
+   try{localStorage.setItem('wooradar-map-theme',blackMap?'black':'normal');}catch(_){}
+ }
+ themeButton.addEventListener('click',()=>setMapTheme(!blackMap));
+ setMapTheme(blackMap);
+
  const colors={fireball:'#ffb16e',uap:'#80cdf8',report:'#d69bfa',other:'#9bb0bb'};
  const names={jpl:'NASA/JPL Fireballs',geipan:'GEIPAN / CNES',nuforc:'NUFORC / UAP Atlas',noaa:'NOAA SWPC Kp',donki:'NASA DONKI',official_uap:'UAP Records Archive',arxiv:'arXiv research',crossref:'Crossref research'};
  let entries=[],selectedSource='all',kind='all',days='all',search='',sources={},loadOK=false,updatedAt=null;
