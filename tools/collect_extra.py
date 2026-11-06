@@ -4,7 +4,7 @@ No invented coordinates or unverified claims. A failed source retains its last
 successful snapshot, and failure status is reported in the manifest.
 """
 import datetime as dt
-import json, os, pathlib, re, urllib.request, urllib.parse, xml.etree.ElementTree as ET
+import json, os, pathlib, re, time, urllib.request, urllib.parse, xml.etree.ElementTree as ET
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/"data"/"extras.json"
@@ -138,12 +138,13 @@ def arxiv():
     queries={"consciousness":'all:"consciousness" AND cat:q-bio.NC',"ai":'all:"emergent behavior" AND cat:cs.AI',"physics":'all:"anomalous" AND cat:quant-ph'}
     ns={"a":"http://www.w3.org/2005/Atom"}
     out=[]
-    for category,q in queries.items():
+    for index,(category,q) in enumerate(queries.items()):
+        if index:time.sleep(3.2)
         url="https://export.arxiv.org/api/query?"+urllib.parse.urlencode({"search_query":q,"start":0,"max_results":15,"sortBy":"submittedDate","sortOrder":"descending"})
         root=get_xml(url)
         for e in root.findall("a:entry",ns):
             title=" ".join((e.findtext("a:title","",ns) or "").split())
-            link=e.findtext("a:id","",ns);date=stamp(e.findtext("a:published","",ns))
+            link=e.findtext("a:id","",ns).replace("http://arxiv.org/abs/","https://arxiv.org/abs/");date=stamp(e.findtext("a:published","",ns))
             if date and link.startswith("https://"):
                 r=record("arxiv-"+link.rsplit("/",1)[-1],title,date,"arXiv",link,"research",detail="Preprint; not a verified anomaly",status="research preprint")
                 if r:r["topic"]=category;out.append(r)
