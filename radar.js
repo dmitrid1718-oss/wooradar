@@ -276,8 +276,8 @@
    entries.sort((a,b)=>(eventDate(b)||0)-(eventDate(a)||0));health();stopReplay();replayActive=false;replayDate=null;$('replay-slider').value=100;replayBounds();render();setTimeout(()=>map.invalidateSize(),0);
  }
  document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{kind=b.dataset.kind;stopReplay();replayActive=false;replayDate=null;document.querySelectorAll('[data-kind]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));replayBounds();render();}));
- document.querySelectorAll('[data-source]').forEach(b=>b.addEventListener('click',()=>{selectedSource=b.dataset.source;stopReplay();replayActive=false;replayDate=null;document.querySelectorAll('[data-source]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
- document.querySelectorAll('[data-days]').forEach(b=>b.addEventListener('click',()=>{days=b.dataset.days;stopReplay();replayActive=false;replayDate=null;document.querySelectorAll('[data-days]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
+ document.querySelectorAll('[data-source]').forEach(b=>b.addEventListener('click',()=>{selectedSource=b.dataset.source;stopReplay();replayActive=false;replayDate=null;document.querySelectorAll('[data-source]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));replayBounds();render();}));
+ document.querySelectorAll('[data-days]').forEach(b=>b.addEventListener('click',()=>{days=b.dataset.days;stopReplay();replayActive=false;replayDate=null;document.querySelectorAll('[data-days]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));replayBounds();render();}));
  $('feed-search').addEventListener('input',e=>{search=e.target.value;stopReplay();replayActive=false;replayDate=null;replayBounds();render();});
  $('reset-map').addEventListener('click',()=>map.setView([17,7],2));
  $('refresh').addEventListener('click',load);
