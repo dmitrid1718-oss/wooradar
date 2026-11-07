@@ -1,0 +1,58 @@
+{
+  "updated_utc": "2026-11-07",
+  "editorial_note": "Curated leads, not verified anomalous objects. Entries remain in the archive and are updated as new primary evidence arrives.",
+  "cases": [
+    {
+      "id": "triangle-federal-2026",
+      "title": "Federal agents' black-triangle report",
+      "category": "Declassified government records",
+      "status": "Documents released · interpretation disputed",
+      "added": "2026-11-07",
+      "reported_date": "2026 (exact date redacted)",
+      "location": "Redacted; not mapped",
+      "summary": "FBI interview and AARO memorandum describe a reported silent triangular object. Accounts differ in timing and sequence. The accompanying images were illustrations, not photographs.",
+      "evidence": "Declassified interview record and agency memorandum, not instrument measurements or authenticated object imagery.",
+      "questions": [
+        "What explains the differences between the two official narratives?",
+        "Is there independent sensor evidence or unredacted chronology?",
+        "Which ordinary explanations can be tested with the released details?"
+      ],
+      "links": [
+        {
+          "label": "Declassified document index (FBI and AARO)",
+          "url": "https://www.disclosurediaries.com/documents/"
+        },
+        {
+          "label": "Scientific American reporting",
+          "url": "https://www.scientificamerican.com/article/strange-triangular-craft-reported-in-new-u-s-government-ufo-release/"
+        },
+        {
+          "label": "Fox News account",
+          "url": "https://www.foxnews.com/us/pentagon-ufo-files-detail-fbi-agents-sighting-silent-triangular-object-no-visible-engines"
+        }
+      ]
+    },
+    {
+      "id": "gillette-lights-2026",
+      "title": "Rotating lights reported over Gillette, Wyoming",
+      "category": "Civilian video report",
+      "status": "Reported · unexplained by reviewer",
+      "added": "2026-11-07",
+      "reported_date": "2026 (video capture timestamps not independently verified)",
+      "location": "Gillette, Wyoming (city-level only; not mapped)",
+      "summary": "A Gillette resident shared video showing three lights appearing to rotate in a triangular pattern. A MUFON Wyoming investigator reviewed the footage and said he had no explanation at present.",
+      "evidence": "Witness testimony and reported video; no verified instrument or flight-track match in this case file.",
+      "questions": [
+        "Can original footage and exact timestamps be obtained?",
+        "What were the camera direction, location and exposure settings?",
+        "Could aircraft, satellites, drones or atmospheric effects account for the pattern?"
+      ],
+      "links": [
+        {
+          "label": "Cowboy State Daily — Nov 5, 2026",
+          "url": "https://cowboystatedaily.com/2026/11/05/ufo-investigator-stumped-by-gillette-womans-new-footage-of-three-rotating-lights/"
+        }
+      ]
+    }
+  ]
+}
