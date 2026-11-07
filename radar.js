@@ -210,6 +210,72 @@
    if(scroll)$('case-detective').scrollIntoView({behavior:'smooth',block:'start'});
  }
 
+
+ // --- PERMANENT CURATED CASE REGISTRY (separate from live observation feeds) ---
+ function appendInvestigationText(container,tag,text,className){
+   const el=document.createElement(tag);
+   if(className)el.className=className;
+   el.textContent=String(text||'');
+   container.append(el);
+   return el;
+ }
+ function openInvestigation(entry){
+   const title=$('case-title'),summary=$('case-summary'),details=$('case-details');
+   title.textContent=entry.title;
+   summary.textContent=(entry.status||'Under review')+' · '+(entry.category||'Curated case')+' · Added '+(entry.added||'date unspecified');
+   details.replaceChildren();details.hidden=false;
+   const grid=document.createElement('div');grid.className='case-grid';
+   for(const [label,value] of [['Reported date',entry.reported_date],['Location',entry.location],['Evidence available',entry.evidence]]){
+     const cell=document.createElement('div');cell.className='case-fact';
+     appendInvestigationText(cell,'b',label);cell.append(document.createTextNode(String(value||'Not supplied')));grid.append(cell);
+   }
+   details.append(grid);
+   appendInvestigationText(details,'p',entry.summary||'No case summary supplied.','case-detail');
+   appendInvestigationText(details,'h3','Open questions');
+   const questions=document.createElement('ul');questions.className='case-question-list';
+   for(const q of entry.questions||[])appendInvestigationText(questions,'li',q);
+   details.append(questions);
+   appendInvestigationText(details,'h3','Original documents and reporting');
+   const links=document.createElement('div');links.className='buttons';
+   for(const l of entry.links||[]){
+     const url=safeURL(l.url);if(!url)continue;
+     const a=document.createElement('a');a.textContent=l.label||'Source';a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a);
+   }
+   details.append(links);
+   appendInvestigationText(details,'p','Editorial case file. A documented report is not proof of an extraordinary object or cause. This registry is not a verified map event.','small');
+   $('case-detective').scrollIntoView({behavior:'smooth',block:'start'});
+ }
+ async function loadInvestigations(){
+   const container=$('investigations-grid'),count=$('investigation-count');
+   try{
+     const response=await fetch('./data/investigations.json?refresh='+Date.now(),{cache:'no-store'});
+     if(!response.ok)throw Error('HTTP '+response.status);
+     const d=await response.json();
+     if(!d||!Array.isArray(d.cases))throw Error('Invalid registry');
+     container.replaceChildren();
+     const cases=[...d.cases].filter(c=>c&&typeof c.id==='string'&&typeof c.title==='string');
+     for(const entry of cases){
+       const card=document.createElement('article');card.className='investigation-card';
+       appendInvestigationText(card,'span',entry.category||'Research case','label');
+       appendInvestigationText(card,'h3',entry.title);
+       appendInvestigationText(card,'p',entry.summary||'No summary available.');
+       appendInvestigationText(card,'span',entry.status||'Status not supplied','muted');
+       const row=document.createElement('div');row.className='buttons';
+       const inspect=document.createElement('button');inspect.type='button';inspect.textContent='Open case file';
+       inspect.addEventListener('click',()=>openInvestigation(entry));row.append(inspect);
+       if(Array.isArray(entry.links)&&entry.links.length&&safeURL(entry.links[0].url)){
+         const a=document.createElement('a');a.href=entry.links[0].url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Source ↗';row.append(a);
+       }
+       card.append(row);container.append(card);
+     }
+     if(!cases.length)appendInvestigationText(container,'p','No investigations published yet.');
+     count.textContent=cases.length+' ongoing case'+(cases.length===1?'':'s')+' · Registry updated '+(d.updated_utc||'date not supplied');
+   }catch(e){
+     container.replaceChildren();appendInvestigationText(container,'p','Investigation registry unavailable. Live observation feeds are independent of this list.');
+     count.textContent='Unable to load curated case registry';
+   }
+ }
+
  function render(){
    const list=visible().filter(e=>!replayActive||!hasCoords(e)||eventDate(e)!==null&&eventDate(e)<=replayDate).sort((a,b)=>(eventDate(b)||0)-(eventDate(a)||0));
    const pinned=list.filter(hasCoords);
@@ -283,4 +349,5 @@
  $('refresh').addEventListener('click',load);
  map.on('zoomend',()=>{const radius=map.getZoom()<=3?3.5:map.getZoom()<=5?5:7;layer.eachLayer(m=>{if(m.setRadius)m.setRadius(radius);});});
  load();
+ loadInvestigations();
 })();
