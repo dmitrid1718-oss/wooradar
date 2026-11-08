@@ -1,0 +1,48 @@
+{
+  "edition": "2026-11-08",
+  "edition_title": "Sunday · November 8, 2026",
+  "byline": "UI News Desk",
+  "updated_at": "2026-11-08",
+  "items": [
+    {
+      "id": "woo-20261108-01",
+      "title": "NASA Revisits a Major Taurid Fireball",
+      "category": "SKY / OBSERVED",
+      "body": "NASA's November 8 Astronomy Picture of the Day features a 2017 fireball over the Dolomites, with reported observations consistent with the Northern Taurid meteor stream. The image is new to today's feature; the meteor itself is historical, not a fresh 2026 event.",
+      "source": "NASA Astronomy Picture of the Day · Nov 8, 2026",
+      "url": "https://science.nasa.gov/image-article/apod-2026-november-8-major-fireball-meteor/",
+      "date": "2026-11-08",
+      "byline": "UI News Desk"
+    },
+    {
+      "id": "woo-20261108-02",
+      "title": "Northern Taurids Near Their November Peak",
+      "category": "SKYWATCH / PREDICTION",
+      "body": "NASA expects the Northern Taurids to peak around November 12. Rates are generally low—around five meteors per hour under ideal conditions—but occasional fireballs can be spectacular. A bright meteor is not, by itself, evidence of unusual technology.",
+      "source": "NASA Skywatching · Nov 2, 2026",
+      "url": "https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/",
+      "date": "2026-11-08",
+      "byline": "UI News Desk"
+    },
+    {
+      "id": "woo-20261108-03",
+      "title": "A Gamma-Ray Burst Gets a Fresh Alert",
+      "category": "ASTRONOMY / DETECTED",
+      "body": "The SVOM mission team reported triggering on gamma-ray burst GRB 261108A at 01:13:20 UTC on November 8, with a low-latency location estimate. This is an instrument alert from a scientific team, not a claim about danger to Earth or exotic visitors.",
+      "source": "NASA GCN / SVOM circular · Nov 8, 2026",
+      "url": "https://gcn.nasa.gov/circulars/46186",
+      "date": "2026-11-08",
+      "byline": "UI News Desk"
+    },
+    {
+      "id": "woo-20261108-04",
+      "title": "Black Triangle File: Observation Is Not Identification",
+      "category": "UAP / INVESTIGATION",
+      "body": "An independent UAP weekly digest discusses disagreement over a reported black-triangle account in newly released files. Witness testimony merits preservation, but without complete sensor data and chain of evidence the object's identity remains unresolved. We should track the original record and skeptical evaluations together.",
+      "source": "UFOUAP weekly digest · Nov 2–8, 2026",
+      "url": "https://www.ufouap.com/news/",
+      "date": "2026-11-08",
+      "byline": "UI News Desk"
+    }
+  ]
+}
