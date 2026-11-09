@@ -1,9 +1,29 @@
 {
-  "edition": "2026-11-08",
-  "edition_title": "Sunday · November 8, 2026",
+  "edition": "2026-11-09",
+  "edition_title": "Monday morning · November 9, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-08",
+  "updated_at": "2026-11-09",
   "items": [
+    {
+      "id": "woo-20261109-ions",
+      "title": "$100,000 Award Funds a Consciousness–UAP Research Proposal",
+      "category": "UAP / RESEARCH FUNDING",
+      "body": "The Institute of Noetic Sciences announced its 2026 research-prize winner on November 5: a multidisciplinary team proposing research on consciousness-associated UAP experiences. The award funds investigation; it does not establish extraterrestrial origins, paranormal mechanisms, or a validated connection.",
+      "source": "Institute of Noetic Sciences · Nov 5, 2026",
+      "url": "https://noetic.org/press/uap-prize/",
+      "date": "2026-11-09",
+      "byline": "UI News Desk"
+    },
+    {
+      "id": "woo-20261109-taurids",
+      "title": "Northern Taurids: Keep Natural Fireballs in the Reference Set",
+      "category": "SKYWATCH / EXPECTED",
+      "body": "NASA's November skywatching guidance places the Northern Taurid peak around November 12. Occasional bright fireballs are expected within a generally low-rate meteor shower. Record time, location and trajectory when evaluating unusual lights; do not label an unidentified sighting exotic by default.",
+      "source": "NASA Skywatching · Nov 2026",
+      "url": "https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/",
+      "date": "2026-11-09",
+      "byline": "UI News Desk"
+    },
     {
       "id": "woo-20261108-01",
       "title": "NASA Revisits a Major Taurid Fireball",
