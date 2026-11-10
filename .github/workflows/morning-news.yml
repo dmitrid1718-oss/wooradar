@@ -1,5 +1,10 @@
 name: Morning news refresh
 on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/update_news.py
+      - .github/workflows/morning-news.yml
   schedule:
     - cron: '30 4 * * *'
       timezone: "America/Chicago"
@@ -18,8 +23,6 @@ jobs:
         with:
           python-version: '3.12'
       - name: Build source-linked daily news snapshot
-        env:
-          NEWS_QUERY: "UAP unidentified anomalous phenomena consciousness research neuroscience anomalous AI"
         run: python scripts/update_news.py
       - name: Commit changed news only
         run: |
@@ -28,5 +31,6 @@ jobs:
           git add news.json
           if ! git diff --cached --quiet; then
             git commit -m "Refresh morning news snapshot"
+            git pull --rebase origin main
             git push
           fi

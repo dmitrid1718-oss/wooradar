@@ -22,11 +22,11 @@ Built on HackRadar's map/feed/scheduled-collector pattern. Responsive Leaflet wo
 
 ## Update and deploy
 
-- Workflows: `.github/workflows/refresh.yml` every six hours; `.github/workflows/pages.yml` handles GitHub Pages deployment.
+- Workflows: `.github/workflows/refresh.yml` every six hours; the morning news workflow refreshes the wire at 4:30 a.m. America/Chicago. Vercel serves production.
 - Collectors: `tools/collect.py` and `tools/collect_extra.py`.
 - Output: `data/observations.json` and `data/extras.json`.
 - The environment variable `NASA_API_KEY` can improve DONKI request quota. Without it, `DEMO_KEY` is rate limited.
-- GitHub Pages deployment should be configured in repository Settings → Pages → GitHub Actions; for a custom domain configure wooradar.org DNS separately.
+- The optional GitHub Pages workflow runs only when manually dispatched for a separately configured Pages host.
 - Scheduled workflows are best-effort and may be delayed. Inspect GitHub Actions and the page's source-health panel for failures.
 
 ## Limitations

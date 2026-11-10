@@ -1,10 +1,6 @@
 name: Publish WooRadar site
 on:
-  push:
-    branches: [main]
-  workflow_run:
-    workflows: ["Refresh WooRadar observation feed"]
-    types: [completed]
+  # Optional secondary host. Production is deployed by Vercel.
   workflow_dispatch:
 permissions:
   contents: read
