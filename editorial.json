@@ -1,9 +1,29 @@
 {
-  "edition": "2026-11-09",
-  "edition_title": "Monday morning · November 9, 2026",
+  "edition": "2026-11-10",
+  "edition_title": "Tuesday morning · November 10, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-09",
+  "updated_at": "2026-11-10",
   "items": [
+    {
+      "id": "woo-20261110-caucus",
+      "title": "UAP Disclosure Advocates Keep Their Seats",
+      "category": "UAP / CONGRESSIONAL OVERSIGHT",
+      "body": "Cybernews reports that Anna Paulina Luna, Tim Burchett, Eric Burlison, and Jared Moskowitz won reelection, preserving several visible bipartisan advocates for UAP disclosure in Congress. The election keeps those lawmakers in place; it does not verify UAP claims or guarantee new hearings or document releases.",
+      "source": "Cybernews · Nov. 7, 2026",
+      "url": "https://cybernews.com/tech/usa-midterms-ufo-uap-disclosure/",
+      "date": "2026-11-10",
+      "byline": "UI News Desk"
+    },
+    {
+      "id": "woo-20261110-sensor",
+      "title": "Evidence Check: The “Cold Orbs” Clips Are Screen Recordings",
+      "category": "CASE DETECTIVE / EVIDENCE QUALITY",
+      "body": "In its August 7 release, AARO says the referenced clips were recorded from a phone filming an infrared sensor display, rather than supplied as native sensor data. It warns that this limits image fidelity and says its descriptions should not be read as an analytical conclusion about what the objects were. Preserve the case as unresolved; record the sensor chain and limits.",
+      "source": "AARO UAP Imagery · Aug. 7, 2026",
+      "url": "https://www.aaro.mil/Next-AARO-Home-redesign/Next-Parent/Next-UAP-Report-Documents/poster/",
+      "date": "2026-11-10",
+      "byline": "UI News Desk"
+    },
     {
       "id": "woo-20261109-ions",
       "title": "$100,000 Award Funds a Consciousness–UAP Research Proposal",
