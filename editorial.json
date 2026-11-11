@@ -1,9 +1,31 @@
 {
-  "edition": "2026-11-10",
-  "edition_title": "Tuesday morning · November 10, 2026",
+  "edition": "2026-11-11",
+  "edition_title": "Wednesday morning · November 11, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-10",
+  "updated_at": "2026-11-11",
   "items": [
+    {
+      "id": "woo-20261111-taurids",
+      "title": "Northern Taurids Peak Tonight: A Natural Fireball Reference",
+      "category": "SKY / ASTRONOMY",
+      "date": "2026-11-11",
+      "edition_date": "2026-11-11",
+      "source": "American Meteor Society · 2026 calendar",
+      "url": "https://www.amsmeteors.org/meteor-showers/meteor-shower-calendar/",
+      "body": "The Northern Taurids peak November 11–12 under very favorable moonlight conditions. The shower has modest meteor rates but can produce bright fireballs. Record exact location, time, viewing direction and imagery before labeling a moving light anomalous. This is a normal astronomical event, not evidence of UAP.",
+      "status": "Confirmed"
+    },
+    {
+      "id": "woo-20261111-nasa",
+      "title": "NASA's November Skywatching Guide Adds a Useful Baseline",
+      "category": "SKY / VERIFIED REFERENCE",
+      "date": "2026-11-02",
+      "edition_date": "2026-11-11",
+      "source": "NASA · November 2, 2026",
+      "url": "https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/",
+      "body": "NASA projects the Northern Taurids around November 12, a Mars–Jupiter pairing on November 15–16, and Leonid activity November 17–18. These predictable events belong beside extraordinary sky reports so that a bright point, fireball or close planetary pairing is not mistaken for unexplained technology.",
+      "status": "Confirmed"
+    },
     {
       "id": "woo-20261110-caucus",
       "title": "UAP Disclosure Advocates Keep Their Seats",
