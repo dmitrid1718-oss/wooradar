@@ -1,9 +1,42 @@
 {
-  "edition": "2026-11-11",
-  "edition_title": "Wednesday morning · November 11, 2026",
+  "edition": "2026-11-12",
+  "edition_title": "Thursday morning · November 12, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-11",
+  "updated_at": "2026-11-12",
   "items": [
+    {
+      "id": "woo-20261112-uap",
+      "title": "Reported Pilot UAP Encounter: Independent Evidence Still Missing",
+      "category": "UAP / WITNESS CLAIM",
+      "date": "2026-11-12",
+      "edition_date": "2026-11-12",
+      "source": "NASA · UAP study baseline",
+      "url": "https://science.nasa.gov/uap/",
+      "body": "What changed: Follow-up search did not establish a primary flight record, calibrated sensor data or independently verified imagery for the previously circulated pilot claim. Status: Unresolved witness/media claim, not verified extraordinary technology. Why watch: original recording, time/location, flight logs and independent analysis.",
+      "status": "Reported"
+    },
+    {
+      "id": "woo-20261112-sky",
+      "title": "Taurid Fireballs: Check Natural Sky Explanations First",
+      "category": "ASTRONOMY / SKY",
+      "date": "2026-11-12",
+      "edition_date": "2026-11-12",
+      "source": "American Meteor Society · 2026 calendar",
+      "url": "https://www.amsmeteors.org/meteor-showers/meteor-shower-calendar/",
+      "body": "What changed: Northern Taurids peak around November 11–12; bright fireballs can be reported as unusual lights. Status: Confirmed astronomical context, not an explanation for every sighting. Why watch: precise timestamps, trajectory and imagery.",
+      "status": "Reported"
+    },
+    {
+      "id": "woo-20261112-broad",
+      "title": "Broad Anomalies Watch: No Verified New Breakthrough",
+      "category": "PSI / NDE / CONSCIOUSNESS / CRYPTIDS / ANOMALOUS AI",
+      "date": "2026-11-12",
+      "edition_date": "2026-11-12",
+      "source": "AARO · public reporting",
+      "url": "https://www.aaro.mil/",
+      "body": "What changed: This review found no independently verified new breakthrough in remote viewing, ESP, NDE, cryptids, anomalous AI or extraterrestrial claims. Status: Unresolved, not debunked by absence of evidence. Why watch: primary datasets, preregistration, replications, public records and investigation comments; comments were not independently audited today.",
+      "status": "Reported"
+    },
     {
       "id": "woo-20261111-taurids",
       "title": "Northern Taurids Peak Tonight: A Natural Fireball Reference",
