@@ -1,9 +1,21 @@
 {
-  "edition": "2026-11-12",
-  "edition_title": "Thursday morning · November 12, 2026",
+  "edition": "2026-11-13",
+  "edition_title": "Friday morning · November 13, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-12",
+  "updated_at": "2026-11-13",
   "items": [
+    {
+      "id": "wooradar-20261113-desk",
+      "title": "Pilot UAP claim remains unverified",
+      "category": "UAP / FOLLOW-UP",
+      "date": "2026-11-13",
+      "edition_date": "2026-11-13",
+      "source": "science.nasa.gov",
+      "url": "https://science.nasa.gov/uap/",
+      "body": "What changed: No independently authenticated flight logs or calibrated sensor data established in this review. Status: Unresolved witness claim; not a confirmed extraordinary craft or a debunk. Why watch: original records and independent analysis. Broad psi, NDE, consciousness, cryptid and unusual-physics searches found no verified breakthrough in this limited run; comments not audited.",
+      "status": "Reported",
+      "byline": "UI News Desk"
+    },
     {
       "id": "woo-20261112-uap",
       "title": "Reported Pilot UAP Encounter: Independent Evidence Still Missing",
