@@ -1,9 +1,37 @@
 {
-  "edition": "2026-11-15",
-  "edition_title": "Sunday · November 15, 2026",
+  "edition": "2026-11-16",
+  "edition_title": "Monday · November 16, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-15T11:00:00Z",
+  "updated_at": "2026-11-16T11:05:18.290Z",
   "items": [
+    {
+      "id": "wooradar-20261116-noaa",
+      "title": "NOAA Outlook: Minor Geomagnetic Storms Likely November 17–18",
+      "category": "SPACE WEATHER / FORECAST",
+      "date": "2026-11-16",
+      "edition_date": "2026-11-16",
+      "byline": "UI News Desk",
+      "source": "NOAA / Space Weather Prediction Center",
+      "url": "https://forecast.weather.gov/product.php?issuedby=OUT&product=ADV&site=CTP",
+      "what_changed": "NOAA's November 16 UTC outlook forecasts G1 activity November 17–18 from combined coronal-hole and CME effects.",
+      "status": "Forecast, not an observed storm; G1 is the minor category.",
+      "why_watch": "Check subsequent NOAA updates and keep predictions separate from measurements.",
+      "body": "What changed: NOAA's November 16 UTC outlook forecasts G1 activity November 17–18 from combined coronal-hole and CME effects.\n\nStatus: Forecast, not an observed storm; G1 is the minor category.\n\nWhy watch: Check subsequent NOAA updates and keep predictions separate from measurements."
+    },
+    {
+      "id": "wooradar-20261116-leonids",
+      "title": "Leonid Viewing Window Arrives November 17–18",
+      "category": "SKYWATCHING / FOLLOW-UP",
+      "date": "2026-11-02",
+      "edition_date": "2026-11-16",
+      "byline": "UI News Desk",
+      "source": "NASA",
+      "url": "https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/",
+      "what_changed": "NASA's recommended Leonid window is before dawn November 17–18, after moonset.",
+      "status": "Scheduled observing context; roughly 15 meteors an hour is an ideal-condition upper expectation, and most observers will see fewer.",
+      "why_watch": "Record time, direction and duration of unusual lights. A known shower is useful context, not proof of any particular object's identity.",
+      "body": "What changed: NASA's recommended Leonid window is before dawn November 17–18, after moonset.\n\nStatus: Scheduled observing context; roughly 15 meteors an hour is an ideal-condition upper expectation, and most observers will see fewer.\n\nWhy watch: Record time, direction and duration of unusual lights. A known shower is useful context, not proof of any particular object's identity."
+    },
     {
       "id": "woo-20261114-anchorage",
       "title": "Anchorage UAP: A Kite Hypothesis Enters the Record",
