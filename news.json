@@ -1,78 +1,121 @@
 {
-  "updated_at": "2026-11-16T20:37:29.415360+00:00",
+  "updated_at": "2026-11-17T19:16:53.951291+00:00",
   "refreshed_topics": [
     "UAP",
-    "Sky observations"
+    "Sky observations",
+    "Consciousness research"
   ],
   "items": [
     {
-      "title": "Leonid meteor shower could put on a show over Boston. Here's when it peaks and how to see it. - CBS News",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdDJnZ0tpYTg3dzZxS2lMSHpSaUxqMHdxa0I1NHFaMkR6X1pFeWZfV3AwMjBUVDJrTlFGSlVZVEZzcXFBWk1OSWhUWUxvZW5SVG9LZ3F0bmszZGZyQ2pxOUQyT0FSZ1d6THZwajduMXNWcFVHSXlUcEpfeklGVFhzRlFB?oc=5",
-      "source": "CBS News",
-      "published": "2026-11-16T20:25:55+00:00",
-      "category": "Sky observations"
-    },
-    {
-      "title": "Leonid meteor shower could bring more than a dozen 'shooting stars' per hour tonight - Live Science",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNRjRhZWJLTDI5czBPTXFpY2JLZDlycnVKZkhmcVJPVUhRYl9VZG1XZEowUHYtWi1pWG5QNHFBZkdLVldGQ3VUdW81d0g1aC15NlV4SVBLYThIY0toNko5eTRTZzdOVjZKTmVmZTNscXJxNWwxUDVPVDBGbEFRb1NVdy1jOWhya3RaYnZ4bVlacERPaFI2dlRwTjBBSzlPeUxORk9FWUVyU3N5azREbXZPZDRZTXZYdDFkRUZfNGtCOXdCZ3dlZUJrRmRLbWlWZ196MEE?oc=5",
-      "source": "Live Science",
-      "published": "2026-11-16T19:06:03+00:00",
-      "category": "Sky observations"
-    },
-    {
-      "title": "Look up! The Leonids meteor shower peaks tonight - Scientific American",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQN1RCaUhZMlJzUXZiTVVpQUFzSkIzci00WW5SNV9BM0dTSWlxUWpzMlRKa0RPdjU1ZHdVc0xoSl92UDJ1WTMzY0laX2lBV1Fkb19aYVFvMXZnUHdXdHF4b1hvYlk4WHZLRFEtSzU4eWhjU3JaSS1MYnJ3QmItc0FFMkdyRVpLVndoMS1aUU9TcW9mZHlzaGc?oc=5",
-      "source": "Scientific American",
-      "published": "2026-11-16T19:06:00+00:00",
-      "category": "Sky observations"
-    },
-    {
-      "title": "‘They love to think the government is keeping it all secret’: SETI scientist Seth Shostak on America’s alien obsession - starlust.org",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPYkVYejZQT2FGR0JOYVdHblM0Z1FwZkVMNlI0T0ZKUWoyaTNWVnhIQV9jeHJjV0FRc2xSZTlwQzgtMXVnNXpCOUp3NU1qdHZQbXVPeHNkWXhsUVdVZkEtcGVtcEtPenFwWXlCMUY5UDVjZnpTTDFrSGNvV0dyZXFRNi1tSzJSMW1YV1hoQnJmMmMycHJfUFBkaEltSlpuX204T3ExTGhyUE9ReVg2aU9Ka0ZQTVpmQVQ5eXdfZ2c1RjdCMXZsMWkzYzQwTE5STFdzMldsRXhn?oc=5",
-      "source": "starlust.org",
-      "published": "2026-11-16T18:56:12+00:00",
-      "category": "UAP"
-    },
-    {
-      "title": "Leonids meteor shower at peak visibility. Here's how to watch - NBC Bay Area",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxON2hsUnNTMWU4RzJ3WHlOU1g3MF81cTg1RlZiSVNnYThnNEJpYWl2RS1DOGtiLXdFSERocE9BcG5KTlFaYTdwLVRtaHhaSDFLbkVuZlhoU1VwcEtOSG5UOVdXVUpxd21HUDVVWFpRRFZUY0laUzBFVlVlSHVTLUNYZDd2M1V0V0Q0X2hOOdIBlAFBVV95cUxPbHhuQmtPclc1bDQtRnJNbG5PY0ppRENKS1FfNndBZWxLOXhORXhtdXBzS0FRVXphT2p6M1Juanp0U2VxdXA3NWNMNkVrYmoyaWd2RzM0b011WnRsa0Y5dUswSnQxQWRjVmxSRE4yM2RqZUlKQ0drVE9ZeVdkY0trb24tZ2xMeVNEX0hUZllGVDdqTmVD?oc=5",
-      "source": "NBC Bay Area",
-      "published": "2026-11-16T18:22:09+00:00",
-      "category": "Sky observations"
-    },
-    {
-      "title": "The Leonid meteor shower peaks Nov. 17-18! Here's what you need to know - Space",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMEdxWkc0SlVmU2R2VTZwNXlyd2M5dFU0TnZYRkVJenhGZHhoV2dMT3hVcm5SUjdzLWZLU1RKMTJZNVpLY0l2MlROREhjLXhBMDRwSFNHbXhvcGJqTnBHNHVQOGJfREZXX0NWemZxN1ltdVVGQXZ4UGJqWTZmamVlb2JxeEsxd1hFbzg1TDNyU3p1Z01oUnktVDhHaVVVZnFfODhfcVg1RmtxYnVsVFd4N0xoMkJSU2M?oc=5",
-      "source": "Space",
-      "published": "2026-11-16T17:00:00+00:00",
-      "category": "Sky observations"
-    },
-    {
-      "title": "Trump shoots down alien theories as high-speed UFOs spark debate over secret military tech - Fox News",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE51LTUzQzVZdTVyZC1lMmEwQnBtZURTMXZXQUZpcTZqdWpzUmQ2RVQtWXhwQ2c1MnRZT3JtYTYtTXhXTkRSdjU1ams1REVvVmFlcnZCZzdB?oc=5",
-      "source": "Fox News",
-      "published": "2026-11-16T16:44:52+00:00",
+      "title": "Plex Co., Ltd. (a member of Bandai Namco) Unveils \"Scene Selection\" UFO Robot Grendizer (Goldorak) Battle in the Skies - EIN Presswire",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPMzQ4SGtWWHh0ODNraGtLaHNoN3dHalNBckw0S1g0dVNWaUxSd3V6clVzd2tmLWYtSFIzSDcwaXJVaTZGS0ZHUHotczZpU01aUV9DcHBiN0ctT2w1TWcxeFdDdHVLWDcyN29QVkRBREdveUcyU1lTeFlUa0VOWE9TOFUyVW0zR2JMNEtQMDNFVk5senpPLU9nU0RuM0ZFVGZyOElyNGVlLTQ3ZkhmUjJUaXFYX2RTN04zb2ZFRl9oT1QtU2hlLTJCdXdmZkpmTFFJakxLT1JLLUNTQktOMTZNZ3JqWExneVROVHBWSA?oc=5",
+      "source": "EIN Presswire",
+      "published": "2026-11-17T18:00:00+00:00",
       "category": "UAP"
     },
     {
       "title": "Ross Coulthart wants closer look at Alaska ‘jellyfish’ UFO before final verdict - NewsNation",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVE15NXhha2cxaEQ0LUdwekY1LWFsSDMxenBhUWl5Q1VPc0ltcTRVOE5UNFVPV2dxVUREMlJLOHVzaHNPX2JwZHlHWHR6UUVGTFBoVFBJb3h4UU5YZnVYNmNvdmV0dWc0dDU0MlRxWkt6YXBnMjNyaUdzVVhGMFA1OURB0gGHAUFVX3lxTE54Tm9PTDhXaWFkM0EteEd5VFRraF9TS3ZNSFJQNVR3YXdRTEtyYUZYa09lR3djX1N5cklrU09ySkpQcFVfN0lOXzZoUV9RUG9acC1wXzdHN0ljcEo0amo4NGFKUEk1cEp2OFBicWx0by03Um43RHYtOUFVS09rRTQzZHNZNW1ESQ?oc=5",
       "source": "NewsNation",
-      "published": "2026-11-16T13:33:03+00:00",
+      "published": "2026-11-17T17:55:37+00:00",
       "category": "UAP"
     },
     {
-      "title": "Here’s how to watch the Leonids meteor shower in North Texas - Dallas News",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPTnBqWnZjdExabm51WDdWbk9NVXVFZWowZ3I2bjhTWUE0NmpSN3hmOW50emEzODRsbHE3MWFSQ01FZ05COUxrRFNNd1ppSVl0bndqMWZuRXEyYUQ0ZktYV2dTa3ZqaWlocEk5NlVlTnhjcnNRWjNWQmxONVIzV3FES3puNjBqSzlIT0w4dzVvQ0dTMy1GcVJN?oc=5",
-      "source": "Dallas News",
-      "published": "2026-11-16T12:11:07+00:00",
+      "title": "Leonid meteor shower peaks tonight with clear skies in Asheville, NC - The Asheville Citizen Times",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNVDFobGQ5ZC1YY05UOHFHQWlWZU1FWUE3eVlHUEs4Qkd0TzdudjhmMTBKY3FpWklaRVhIeEpfTFpUU2RzSHVtaEp5VENVRGlOWmlpZWs0OGw1MHFMY1pCS3BUMFRBc0lKY0J5RjJuZTNwbXRuQUx1Y3Z0c1F4Zk5BYW42TnNEc2lwMHN1TzZKRnUtaHpaYTlYTkVXRlZTRDdqUllBZm9Ba05XUEc3UnBoUGhOMmlvZG5mbmFQbUo0OWNrNDIwMGlrX2w2NUU?oc=5",
+      "source": "The Asheville Citizen Times",
+      "published": "2026-11-17T17:30:00+00:00",
       "category": "Sky observations"
     },
     {
-      "title": "William Neil McCasland missing: Retired US Air Force maj. gen. missing, once commanded base long associated with UFO lore - ABC7 Los Angeles",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPWXFiQ2g5Ri0ybzRtekdkSDFxdUdCRXRYR1JXVmp4T2tZUE5aNUZ4NkhBLXZ2MjZ3X00wLTQwZWJDVlc0c3d5RmhUbVdseU9GQlZOeVREbTVWejNIR3hVQkpjVmpjdmNGaWs1OFhkOHdMQWpGNDRpMHhMOElZT3VVTG5yVF9qNlZyQm5UUDVLQzNPZW9BUlNQdkpXdXB0bkstUWVGb0E2bUFNSkFaTGtJRjQ5a2RzSWtjWXVMUzBHQ3dESzc3UmNYbUc3RndEcXFvZld30gHYAUFVX3lxTE9reFZvLWt0UC1IaDM0bXdDdHc4NWlIbHhPTzRxLUJScHVpVDVvWWQ0TnE3cUtEbHlhb0VFYWl5LXpHMTVnZmMtcFBuRktqQkI1SmZDUk5PQl9YZlkyS1NLRklYN1ZXSmFPUzd4SGtwSlhnaDE4R3lMX1EyMG9ycXlZQVpROUpCdE1DUUNPUTJrbGEwS1hadXZiSzdycW0zSktWek9ISHFuakUtcnlQRWFlbEt5T0JzWjdVcGdDXzFZQjMzc3dfMnRzWnRHZ21TOVh5Nkd2WXB2ZQ?oc=5",
-      "source": "ABC7 Los Angeles",
-      "published": "2026-11-15T21:00:46+00:00",
+      "title": "Leonid meteor shower reaches peak activity Tuesday night - KVII",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOVkIxaXdYakJqU1VMVTN2aFhJVHFidW92TEpuRWNVNEdsczJGU0JlNUJLbC1HaEFIeHFfOTZDbUhqYy1rdjFkWHJzUHFuSy02Qnp6OXFtRE5KbUQ2QVVZZlJHQnJKQ3BQbHVpbTJnUDJXU1dCckZEZVFWWk02NDRVbVBTSlpmOGRSN0JScVIta3JKM3IxTkczNzZjNEd0d2hKZmR1aTFlRmFCX2ZaOU1NNkNDSW5TSTRjdFNKMUlkOUFlajJNSGRFUw?oc=5",
+      "source": "KVII",
+      "published": "2026-11-17T17:27:35+00:00",
+      "category": "Sky observations"
+    },
+    {
+      "title": "$1 MILLION BERGGRUEN PRIZE FOR PHILOSOPHY & CULTURE AWARDED TO THOMAS NAGEL - ACROFAN USA",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVLWFEb21FeEp6Tk1sakhoZFBIQ2oydHRzZmpRbFVPbnY4WjMweXVfZklOUTdWQV84WHNGdDhpMzllbzk4QmNIQjdyM2hQbUFKRnBCdS05OVpqSmN3?oc=5",
+      "source": "ACROFAN USA",
+      "published": "2026-11-17T17:21:14+00:00",
+      "category": "Consciousness research"
+    },
+    {
+      "title": "What Marylanders should know about the Leonids meteor shower - Baltimore Sun",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE11MTJSWUljazR6V2w4MDZ6c2l4dm9iWGhpYl95VlZGd3JPZUotMjBpWk5WWjVPaVdPbXFtc0RiS1h3LXFqbXRNYkpDSEdGbDl6dWhVcnJoanFOc1F0RWNBaTEzQW11QVZzekc2amt0MA?oc=5",
+      "source": "Baltimore Sun",
+      "published": "2026-11-17T16:36:45+00:00",
+      "category": "Sky observations"
+    },
+    {
+      "title": "What Does a Correct Answer Reveal? AI-Assisted Practice and Performance Without AI - Frontiers",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZHlpc1p1X01Uem1OZEVCRmpNWU9ta1RVM1ZseHFCRHptUzNzMXA0d1U5d3plc2VxejRDSm1zR3pyZG9oMVlDZUtBTFowa08xTmtUdjU4S2h4Zkd6b2JaZzhLSjBJRHR0dUZ0a2I1dHR0SzJUenBncDduTk8xY2JNT09XWnU1LVlfcUN4cUU5MmhCdw?oc=5",
+      "source": "Frontiers",
+      "published": "2026-11-17T15:18:21+00:00",
+      "category": "Consciousness research"
+    },
+    {
+      "title": "Why Do Capable Students Burn Out? Disentangling Self-Efficacy, Academic Buoyancy, and Two Dimensions of EFL Learning Burnout - Frontiers",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSHFrLUp1b0NWam5FeUhzZXFfWjJmdjdQYU9VMzcyb3RLSWV4cEpOdDRTVDdEM0hhZWhQSW1ybTFoZWhIWlVaZUxnbVVmZV9mVGdGY2xiSUYzZXVQdjRfUlRtVzlVM3NVd1JURVpRSm5aWEF6VXJYaXZSVVhNVmlBUVF6ZExEeTZHVVlQX0ZtckFwQQ?oc=5",
+      "source": "Frontiers",
+      "published": "2026-11-17T15:18:21+00:00",
+      "category": "Consciousness research"
+    },
+    {
+      "title": "Dallas Weather: Clear skies, chilly temperatures and Leonid meteor shower peak - FOX 4 News Dallas-Fort Worth",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRGtlSEtWT1RkcGRkekJGREpCSm5DVFRhMTh4XzZhV1g2TVk3VjlLRE5NY09rMThqMWJndHFSb0tTS2FpSjFYOUVjRS1xNkdwQlFyU3dMdzNNYnE0M3FEV3hpRlJEbHRFU0pON1dXZWNFRWEwSUFQNEJUVTdEaFo4YjhDYXdOTEVlaVctZEkwTHpUSTk5cmRoOWZnMTZnY1VHR2g5ZHVfYWg?oc=5",
+      "source": "FOX 4 News Dallas-Fort Worth",
+      "published": "2026-11-17T11:48:58+00:00",
+      "category": "Sky observations"
+    },
+    {
+      "title": "Paradoks Teams Up With Miss Monique On ‘Undertone’ - UFO Network",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBDYXZCTl9YWFI0bTNHYmNid1ZsUGlyQ0VhOHBwdFNTUWY1ck5vdXJ3VmdYV3BVbjFCc0lhZGMxTWRjLUsybi01bW9qNGl4Wnlpa1VWLVRSX1lfdDBqNWJ4Zmp3ZS1RVkU?oc=5",
+      "source": "UFO Network",
+      "published": "2026-11-17T10:53:30+00:00",
+      "category": "UAP"
+    },
+    {
+      "title": "The Leonid meteor shower peaks tonight! Here's what you need to know - Space",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMEdxWkc0SlVmU2R2VTZwNXlyd2M5dFU0TnZYRkVJenhGZHhoV2dMT3hVcm5SUjdzLWZLU1RKMTJZNVpLY0l2MlROREhjLXhBMDRwSFNHbXhvcGJqTnBHNHVQOGJfREZXX0NWemZxN1ltdVVGQXZ4UGJqWTZmamVlb2JxeEsxd1hFbzg1TDNyU3p1Z01oUnktVDhHaVVVZnFfODhfcVg1RmtxYnVsVFd4N0xoMkJSU2M?oc=5",
+      "source": "Space",
+      "published": "2026-11-17T08:53:39+00:00",
+      "category": "Sky observations"
+    },
+    {
+      "title": "Leonid meteor shower 2026: When and where to see it from where you live - Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUlhPOG5RbHAzYUMzQXdJcGV5MWNNa0w5eGdyYTdtVHZFUXIwS29TaEItMEEtS1BCaV96N2xoTDRzbFlHSFNzWS1SdksxRHpWd0Q0WndHWkZ2bnAzalhqcWx1QUZ1N2E5eGlxLWw1R2JwVFNibm9rZ3JjZ0hCRFc4WTBlVkFDMnNVV01qYkxKY1cySkNYc0tDQ3AwZGdiazFzVjdQVGRuVFQ3Mmx5eFJQdzRROTdQMFnSAbcBQVVfeXFMUFJYTzhuUWxwM2FDM0F3SXBleTFjTWtMOXhncmE3bVR2RVFyMEtvU2hCLTBBLUtQQmlfejdsaEw0c2xZR0hTc1ktUnZLMUR6VndENFp3R1pGdm5wM2pYanFsdUFGdTdhOXhpcS1sNUdicFRTYm5va2dyY2dIQkRXOFkwZVZBQzJzVVdNamJMSmNXMkpDWHNLQ0NwMGRnYmsxc1Y3UFRkblRUNzJseXhSUHc0UTk3UDBZ?oc=5",
+      "source": "Al Jazeera",
+      "published": "2026-11-17T05:42:21+00:00",
+      "category": "Sky observations"
+    },
+    {
+      "title": "You have to see this! High-altitude balloon or 'tentacled UFO?' Viral video shows strange floating object in sky - East Idaho News",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPdVE5OHRnZGM1Z2FpWDVnSEg3UWNVUXlXdFRieDRsOG51Nlp2RXdfZVYtYUZtWVVYbEhCRGNRam0tWENJT0NBQmFOSWNtbXVmNDNJTGtiVTlYVnFpLW04T1BvcE1tT2o2TV9WU2JiQnFBRENRckpWR1ZvUkozV1N0U09zdW9mdjg4QTZ6dXhMbGg4QmZidExnNlVtME4wZ1RQaWdfWmtOMXctZUtUbVJldWdCYU5JWjJQMGZwcFVwSjdIVVNRVjk5NWxDQng3V1dnalA4d1hZeTUwZjNtWDVWUg?oc=5",
+      "source": "East Idaho News",
+      "published": "2026-11-17T02:00:00+00:00",
+      "category": "UAP"
+    },
+    {
+      "title": "Psychology's Category Mistake - Frontiers",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQVFdmakdyVkNLaV9wUm0zRFpjZmM4SnpiZXJjWEI3YmU3WkI3MFQySF93X2QtdUhDWUxjTmlFcWVqWnZwRmozdndzSTh2RnNHbU9PNF9zczFUM0hhMG50NVRqSDBQWTlRMVBGdHNJalRsNTU5VTZaczd6dXBxOHJjNlpBR2FrZ09rMDFlOHVBTGVhUQ?oc=5",
+      "source": "Frontiers",
+      "published": "2026-11-16T23:18:04+00:00",
+      "category": "Consciousness research"
+    },
+    {
+      "title": "Are STEM workplaces especially dark? Considering dark personality and workplace experiences among employees in STEM and non-STEM jobs - Frontiers",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQMGllM3hTSFVyaUd4WG15Z1hkajFkTFdfWEptMERaR0dwb0RfU29HWExqdTVVZkVpeHhtNlg1aE01eTV2MXV4eGJNYUtPQWNFRTFaaUxaTlVVRE5ma2h4SzFkOUVfY185YUxFelhQUGQxNVFJUHdidndLMTZZZWM5SEVHV2FfYzY3NlBBRTZtY2d4UQ?oc=5",
+      "source": "Frontiers",
+      "published": "2026-11-16T13:54:47+00:00",
+      "category": "Consciousness research"
+    },
+    {
+      "title": "UFO-like object floats through rainbow in Anchorage, Alaska - The Weather Channel",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVHFKRWF0X3dsalA2a3hSSzVrdkNBQ2laY09IanNwQmVka2h4aDVpdU1GWGR5RVdKR1JyQlFHU2QyU0F5YV9EdDFTS0xrYUxZbnVzZXhkcGt1dmQxRUxfb0J2N0dzckRad1AtOFpUbUFtb2xPYXVsQ0E3VDZaN09CNXpLOUd2OGcxaERYWTBWUXcxZ1Z0U1lwUmdYLXE?oc=5",
+      "source": "The Weather Channel",
+      "published": "2026-11-15T16:58:35+00:00",
       "category": "UAP"
     },
     {
@@ -81,27 +124,6 @@
       "source": "FOX 8 News",
       "published": "2026-11-14T20:11:49+00:00",
       "category": "UAP"
-    },
-    {
-      "title": "Presidential Unsealing and Reporting System for UAP Encounters (PURSUE) - U.S. Department of War (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBlZ1RkSjRVOVF6SWhuRWF2NTFiV0g3UHc4Z3RSWXI3T09fQ3RiN29wVnlUMk9SOGpYZVZLTXNadjlvUl94R0ZrWlY3dmdSLVVaMWRvOE03T3lFZw?oc=5",
-      "source": "U.S. Department of War (.gov)",
-      "published": "2026-11-14T15:54:01+00:00",
-      "category": "UAP"
-    },
-    {
-      "title": "Teacher Self-Efficacy in Teacher-AI Collaboration: A Systematic Review - Frontiers",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOenNXSWoybDBkT0lNOWZNellCRWpvTkx1QVAtYTQwYWhhZ19RTUN4eTFiQzdJZHh1eEQxTVdTS3lLRUJKck5MYzBLVHRDQTJTZlg2Q19TdWtfRjgzcFhFeENqUWM2QmMxX214MDFhbm5vZlhfQUdTX09EaGN1Qk0yLTVwU2V6ekpjSzRLSUQ2UjZHUQ?oc=5",
-      "source": "Frontiers",
-      "published": "2026-11-13T20:36:23+00:00",
-      "category": "Consciousness research"
-    },
-    {
-      "title": "\"Turn Off the Light, She's Perfect\": Gendered Digital Labor and Cultural Psychology in Chinese Girl-Group Livestreaming - Frontiers",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUHBVRG5TUDUxY0l4OFdHSXU1RENKUHFnSWRfVHNkVFJEd2R3YU4waXBtYmhJaTJWT3ZweVVFZWI5ZGRZUEFvODdQcS01dGQtWTkyRGlzbzY0Nk96Z3JXbjE2V2tCRVRDcTg5ZXdpZHRJTW85bi1paUgtSy1Uemc4cTFjTURZc0FCckVCVjl6cmNWdw?oc=5",
-      "source": "Frontiers",
-      "published": "2026-11-13T20:36:22+00:00",
-      "category": "Consciousness research"
     }
   ]
 }
