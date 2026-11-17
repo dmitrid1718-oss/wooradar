@@ -1,9 +1,23 @@
 {
-  "edition": "2026-11-16",
-  "edition_title": "Monday · November 16, 2026",
+  "edition": "2026-11-17",
+  "edition_title": "Tuesday · November 17, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-16T11:05:18.290Z",
+  "updated_at": "2026-11-17T10:54:22.486314+00:00",
   "items": [
+    {
+      "id": "woo-20261117-noaa",
+      "title": "Quiet Measurements, Minor Storm Forecast",
+      "category": "SPACE WEATHER / OBSERVED VS FORECAST",
+      "date": "2026-11-17",
+      "edition_date": "2026-11-17",
+      "byline": "UI News Desk",
+      "source": "NOAA / SWPC",
+      "url": "https://forecast.weather.gov/product.php?format=CI&glossary=1&issuedby=TDF&product=DAY&site=SJT&version=1",
+      "what_changed": "NOAA reports a past-day Kp maximum of 1, with G1 forecast for late November 17 and early November 18 UTC.",
+      "status": "No storm in that past-day observation; forecast CME contribution is low confidence.",
+      "why_watch": "Keep observation times with aurora reports and compare them with subsequent measured Kp.",
+      "body": "What changed: NOAA reports a past-day Kp maximum of 1, with G1 forecast for late November 17 and early November 18 UTC.\n\nStatus: No storm in that past-day observation; forecast CME contribution is low confidence.\n\nWhy watch: Keep observation times with aurora reports and compare them with subsequent measured Kp."
+    },
     {
       "id": "wooradar-20261116-noaa",
       "title": "NOAA Outlook: Minor Geomagnetic Storms Likely November 17–18",
