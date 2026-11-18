@@ -1,9 +1,23 @@
 {
-  "edition": "2026-11-17",
-  "edition_title": "Tuesday · November 17, 2026",
+  "edition": "2026-11-18",
+  "edition_title": "Wednesday · November 18, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-17T23:46:00+00:00",
+  "updated_at": "2026-11-18T11:22:57.428Z",
   "items": [
+    {
+      "id": "woo-20261118-noaa-g1-forecast",
+      "title": "NOAA Continues Minor G1 Geomagnetic Watch for November 18",
+      "category": "SPACE WEATHER / FORECAST",
+      "date": "2026-11-18",
+      "edition_date": "2026-11-18",
+      "byline": "UI News Desk",
+      "source": "NOAA Space Weather Prediction Center",
+      "url": "https://forecast.weather.gov/product.php?format=CI&glossary=1&issuedby=TDF&product=DAY&site=NWS&version=1",
+      "what_changed": "NOAA's November 18–20 three-day outlook indicates G1 (minor) geomagnetic storm conditions are possible on November 18; expected peak three-hour Kp around 4.67.",
+      "status": "Forecast, not proof of an observed storm or unusual object. Weather and observation conditions vary by location.",
+      "why_watch": "Compare subsequent Kp measurements with any reported aurora or unidentified lights; retain observation times and sky conditions.",
+      "body": "What changed: NOAA's November 18–20 three-day outlook indicates G1 (minor) geomagnetic storm conditions are possible on November 18; expected peak three-hour Kp around 4.67.\n\nStatus: Forecast, not proof of an observed storm or unusual object. Weather and observation conditions vary by location.\n\nWhy watch: Compare subsequent Kp measurements with any reported aurora or unidentified lights; retain observation times and sky conditions."
+    },
     {
       "id": "woo-20261117-evening-leonid-fireballs",
       "title": "Leonid Fireballs Offer a Useful Skywatching Baseline",
