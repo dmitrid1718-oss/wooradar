@@ -1,9 +1,37 @@
 {
-  "edition": "2026-11-18",
-  "edition_title": "Wednesday · November 18, 2026",
+  "edition": "2026-11-19",
+  "edition_title": "Thursday · November 19, 2026",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-18T12:00:00+00:00",
+  "updated_at": "2026-11-19T12:00:00Z",
   "items": [
+    {
+      "id": "woo-20261119-noaa-quiet",
+      "title": "NOAA Now Expects No G1 Geomagnetic Storm November 19–21",
+      "category": "SPACE WEATHER / REVISED FORECAST",
+      "date": "2026-11-19",
+      "edition_date": "2026-11-19",
+      "byline": "UI News Desk",
+      "source": "NOAA Space Weather Prediction Center",
+      "url": "https://forecast.weather.gov/product.php?format=ci&glossary=1&issuedby=TDF&product=DAY&site=MEG&version=1",
+      "what_changed": "The latest NOAA 3-day outlook forecasts a maximum Kp of 3.33 for November 19–21 and no G1-or-higher geomagnetic storm, a quieter outlook than the preceding November 18 watch.",
+      "status": "Official forecast, subject to revision; not proof there can be no isolated radio interference or auroral sighting.",
+      "why_watch": "Use observed Kp and event timestamps when reviewing unusual-light or interference claims.",
+      "body": "What changed: The latest NOAA 3-day outlook forecasts a maximum Kp of 3.33 for November 19–21 and no G1-or-higher geomagnetic storm, a quieter outlook than the preceding November 18 watch.\n\nStatus: Official forecast, subject to revision; not proof there can be no isolated radio interference or auroral sighting.\n\nWhy watch: Use observed Kp and event timestamps when reviewing unusual-light or interference claims."
+    },
+    {
+      "id": "woo-20261119-fireballs",
+      "title": "Fifteen NASA-Network Fireballs Logged for November 17",
+      "category": "SKYWATCH / METEOR BASELINE",
+      "date": "2026-11-19",
+      "edition_date": "2026-11-19",
+      "byline": "UI News Desk",
+      "source": "NASA camera-network figures via Spaceweather.com",
+      "url": "https://www.spaceweather.com/archive.php?day=19&month=11&view=view&year=2026",
+      "what_changed": "The November 19 archive lists 15 fireballs detected on November 17: nine sporadic, four Leonids, one November theta Aurigid and one Northern Taurid.",
+      "status": "Instrument-derived meteor observations, not anomalous craft; observation date is November 17, not November 19.",
+      "why_watch": "Compare reported streaks of light with known meteor timing and sky geometry; keep sightings evidence-based.",
+      "body": "What changed: The November 19 archive lists 15 fireballs detected on November 17: nine sporadic, four Leonids, one November theta Aurigid and one Northern Taurid.\n\nStatus: Instrument-derived meteor observations, not anomalous craft; observation date is November 17, not November 19.\n\nWhy watch: Compare reported streaks of light with known meteor timing and sky geometry; keep sightings evidence-based."
+    },
     {
       "id": "woo-20261118-pursue",
       "title": "PURSUE: Government UAP Document Releases Continue",
