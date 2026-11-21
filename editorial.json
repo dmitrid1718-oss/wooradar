@@ -1,9 +1,33 @@
 {
-  "edition": "2026-11-20",
-  "edition_title": "November 20, 2026 · Afternoon follow-up",
+  "edition": "2026-11-21",
+  "edition_title": "November 21, 2026 · Verified morning follow-up",
   "byline": "UI News Desk",
-  "updated_at": "2026-11-20T21:17:00Z",
+  "updated_at": "2026-11-21",
   "items": [
+    {
+      "date": "2026-11-21",
+      "edition_date": "2026-11-21",
+      "byline": "UI News Desk",
+      "id": "woo-20261121-radar-context",
+      "title": "New UAP Radar Claims: Eight Detections Are Not Eight Identified Craft",
+      "category": "UAP / SENSOR-REVIEW / FOLLOW-UP",
+      "url": "https://www.war.gov/UFO/",
+      "source": "PURSUE source archive · media follow-up November 20–21, 2026",
+      "what_changed": "New coverage of the November 20 UAP-record release discusses eight radar detections over 84 seconds in a reported 2023 military incident. This is a closer evidence-review follow-up to the existing PURSUE record, not a second independent release.",
+      "status": "The publication of files is verifiable; the physical identity, independence and interpretation of individual radar detections are unresolved. Speed estimates without full sensor metadata should be treated cautiously.",
+      "why_watch": "Examine original files, radar processing, time alignment, sensor calibration and alternative explanations. Repeated detections do not automatically mean multiple objects, nor prove nonhuman technology.",
+      "sources": [
+        {
+          "label": "Primary UAP archive",
+          "url": "https://www.war.gov/UFO/"
+        },
+        {
+          "label": "Reporting on radar details",
+          "url": "https://nypost.com/2026/11/20/us-news/pentagon-ufo-files-reveal-mysterious-radar-detections-suggesting-mach-2-5-flight-but-theres-a-catch/"
+        }
+      ],
+      "body": "What changed: New coverage of the November 20 UAP-record release discusses eight radar detections over 84 seconds in a reported 2023 military incident. This is a closer evidence-review follow-up to the existing PURSUE record, not a second independent release.\n\nStatus: The publication of files is verifiable; the physical identity, independence and interpretation of individual radar detections are unresolved. Speed estimates without full sensor metadata should be treated cautiously.\n\nWhy watch: Examine original files, radar processing, time alignment, sensor calibration and alternative explanations. Repeated detections do not automatically mean multiple objects, nor prove nonhuman technology."
+    },
     {
       "date": "2026-11-20",
       "edition_date": "2026-11-20",
